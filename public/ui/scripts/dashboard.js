@@ -56,7 +56,7 @@ Dashboard.prototype.setup = function() {
   });
 };
 
-Dashboard.prototype.fetchTotals = function(metrics) {
+Dashboard.prototype.fetchTotals = function() {
   var self = this;
 
   var getTotal = function(index, expression, start, stop) {
@@ -76,17 +76,18 @@ Dashboard.prototype.fetchTotals = function(metrics) {
   var start = d3.time.day.floor(new Date());
   var stop = d3.time.day.offset(start, 1);
 
-  for (var i = 0, c = metrics.length; i < c; i++) {
-    var metric = metrics[i];
+  for (var i = 0, c = self.metrics.length; i < c; i++) {
+    var metric = self.metrics[i];
     var expression = metric.expression.toString();
     getTotal(i, expression, start, stop);
   }
 
-  setTimeout(this.fetchTotals, 60*1000);
+  setTimeout(function() { self.fetchTotals (); }, 60*1000);
 };
 
 Dashboard.prototype.setMetrics = function(metrics) {
   var self = this;
+  this.metrics = metrics;
   d3.select(this.selector)
     .insert("div", ".bottom")
     .selectAll(".horizon")
@@ -100,6 +101,6 @@ Dashboard.prototype.setMetrics = function(metrics) {
 
    if (this.options.showTotals) {
      d3.selectAll('.horizon .title').append('span').attr('class', 'totals');
-     this.fetchTotals(metrics);
+     this.fetchTotals();
    }
 };

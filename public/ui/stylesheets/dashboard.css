@@ -138,6 +138,16 @@ header {
   .axis.top, .axis.bottom { padding: 0; }
 }
 @media all and (max-width: 400px) {
+  header {
+    height: 30px;
+    line-height: 30px;
+  }
+    header #dashboards {
+      font-size: 14px; 
+    }
+    header #step {
+      margin-top: 4px;
+    }
   .horizon .title,
   .horizon .value {
     font-size: 12px;

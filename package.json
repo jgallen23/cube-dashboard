@@ -1,0 +1,22 @@
+{
+  "name": "cube-dashboard",
+  "author": "Greg Allen <@jgaui> (http://jga.me)",
+  "description": "a dashboard for cube",
+  "homepage": "https://github.com/jgallen23/cube-dashboard",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgallen23/cube-dashboard.git"
+  },
+  "dependencies": {
+    "node-static": "*",
+    "optimist": "*"
+  },
+  "devDependencies": {
+  },
+  "engines": {
+    "node": "*"
+  },
+  "bin": { "cube-dashboard": "./bin/dashboard.js" },
+  "keywords": ["cube", "dashboard", "report"]
+}

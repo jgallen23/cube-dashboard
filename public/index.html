@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Dashboard</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" /> 
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="apple-touch-icon-precomposed" href="/ui/images/icon.png"/>
+		<meta name="viewport" content="width = device-width, initial-scale = 1.0, user-scalable = no" />  	
+		<!-- just for dev -->
+		<script src="/ui/vendor/live.js"></script>
+		<link rel="stylesheet" href="/ui/stylesheets/dashboard.css"/>
+	</head>
+	<body>
+		<header>
+      <select id="dashboards">
+      </select>
+			<select id="step">
+				<option value="1e4">10 seconds</option>
+				<option value="6e4">1 minute</option>
+				<option value="3e5">5 minutes</option>
+			</select>
+		</header>
+		<div id="dashboard"></div>
+		<script src="/ui/vendor/d3.v2.min.js"></script>
+		<script src="/ui/vendor/cubism.v1.min.js"></script>
+		<script src="/ui/vendor/aug.min.js"></script>
+		<script src="/ui/scripts/dashboards.js"></script>
+		<script src="/ui/scripts/dashboard.js"></script>
+		<script>
+			d3.json('/config.json', function(config) {
+        window.dashboards = new DashboardSelect('#dashboards', config.dashboards);
+				window.dashboard = new Dashboard("#dashboard", config.host, dashboards.getCurrentDashboard());
+			});
+		</script>
+
+	</body>
+</html>

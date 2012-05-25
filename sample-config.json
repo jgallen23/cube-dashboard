@@ -1,0 +1,21 @@
+{
+  "host": "http://localhost:1081",
+  "icon": "path/to/your/ios/icon.png",
+  "dashboards": [
+    {
+      "name": "Site",
+      "showTotals": true,
+      "metrics": [
+        { "title": "Requests", "expression": "sum(request)" },
+        { "title": "Logins", "expression": "sum(login)" }
+      ]
+    },
+    {
+      "name": "Cube",
+      "metrics": [
+        { "title": "Cube Compute", "expression": "sum(cube_compute)" },
+        { "title": "Cube Request", "expression": "sum(cube_request)" }
+      ]
+    }
+  ]
+}

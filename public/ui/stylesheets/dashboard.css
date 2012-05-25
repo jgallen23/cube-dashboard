@@ -1,5 +1,5 @@
 body {
-  font-family: Arial;
+  font-family: Helvetica Neue, Helvetica, Arial;
   margin: 0;
   padding: 0;
 }
@@ -18,7 +18,7 @@ header {
   color: #fff;
 }
   header #dashboards {
-    font-size: 20px; 
+    font-size: 18px; 
   }
   header #step {
     float: right;
@@ -65,7 +65,8 @@ header {
   background-image: -moz-linear-gradient(bottom, #fff 0%, rgba(255,255,255,0) 100%);
   background-image: -webkit-linear-gradient(bottom, #fff 0%, rgba(255,255,255,0) 100%);
   background-image: -ms-linear-gradient(bottom, #fff 0%, rgba(255,255,255,0) 100%);
-  bottom: 30px;
+  bottom: 0px;
+  position: fixed;
   padding: 24px 0 0 0;
 }
 
@@ -93,10 +94,10 @@ header {
   line-height: 20px;
   position: absolute;
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.9);
   height: 20px;
   font-size: 12px;
-  color: #fff;
+  color: #000;
 }
 .horizon .title {
   border-radius: 0 0 5px 0;
@@ -138,11 +139,15 @@ header {
   .axis.top, .axis.bottom { padding: 0; }
 }
 @media all and (max-width: 400px) {
-  header #dashboards {
-    font-size: 14px; 
-  }
   .horizon .title,
   .horizon .value {
     font-size: 12px;
   }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+  header #dashboards {
+    font-size: 14px; 
+  }
+
 }

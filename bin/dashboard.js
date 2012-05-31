@@ -12,6 +12,10 @@ var opt = require('optimist')
     desc: 'Port to run server',
     alias: 'port',
     default: 8000
+  })
+  .options('H', {
+    desc: 'Cube host (overrides config)',
+    alias: 'host'
   });
 
 var argv = opt.argv;
@@ -32,6 +36,10 @@ var configFile = argv._[0];
 var startServer = function(err, configStr) {
   if (err) throw err;
   var config = JSON.parse(configStr);
+  if (argv.host) {
+    config.host = argv.host;
+    configStr = JSON.stringify(config);
+  }
   require('http').createServer(function (request, response) {
     if (request.url == '/config.json') {
       response.setHeader('Content-Type', 'application/json');

@@ -27,11 +27,14 @@
   width: 98%;
   border-collapse: collapse;
   margin-top: 15px;
+  font-size: 14px;
 }
   #content table td {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
   }
-  #content th.time {
-    width: 225px;
+@media all and (max-width: 400px) {
+  #content table {
+    font-size: 11px;
   }
+}

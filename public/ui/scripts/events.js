@@ -31,7 +31,7 @@ Events.prototype.render = function() {
 
     var row = self.el.append('tr');
 
-    row.append('td').text(data.time);
+    row.append('td').text(new Date(data.time).toRelativeTime());
     for (var i = 0, c = self.dataPoints.length; i < c; i++) {
       var dp = self.dataPoints[i];
       row

@@ -19,8 +19,7 @@
     }
   ]
   "events": {
-    "request": [
-      "url"
-    ]
+    "request": [ "url" ],
+    "cube_request": [ "ip", "path", "method" ]
   }
 }

@@ -9,7 +9,8 @@ var Events = function(el, host, name, dataPoints) {
 
 Events.prototype.render = function() {
   var self = this;
-  var url = this.host+'/1.0/event?expression='+this.name+'('+this.dataPoints.join(',')+')&limit=100&cachebuster='+ (+new Date());
+  var expression = (this.dataPoints.length == 0) ? this.name : this.name+'('+this.dataPoints.join(',')+')';
+  var url = this.host+'/1.0/event?expression='+expression+'&limit=100&cachebuster='+ (+new Date());
 
   var writeHeader = function() {
     var row = self.el

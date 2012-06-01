@@ -14,15 +14,19 @@ EventList.defaults = {
 
 EventList.prototype.render = function() {
   var self = this;
-  var addListItem = function(name, data) {
+  var addListItem = function(name, value) {
     self.el
-      .append('li')
+      .append('option')
         .text(name)
-        .on('click', function() {
-          self.options.selected(name, data);
-        });
+        .attr('value', value);
   };
+  addListItem("Please select", "-1");
   for (var name in this.events) {
-    addListItem(name, this.events[name]);
+    addListItem(name, name);
   }
+  self.el.on('change', function() {
+    if (this.value == "-1")
+      return;
+    self.options.selected(this.value, self.events[this.value]);
+  });
 };

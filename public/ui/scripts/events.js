@@ -34,10 +34,11 @@ Events.prototype.render = function() {
 
     row.append('td').text(new Date(data.time).toRelativeTime());
     for (var i = 0, c = self.dataPoints.length; i < c; i++) {
-      var dp = self.dataPoints[i];
+      var cell = data.data[self.dataPoints[i]];
+      if (typeof(cell) == "object") { cell = JSON.stringify(cell); }
       row
         .append('td')
-          .text(data.data[dp]);
+          .text(cell);
     }
 
 

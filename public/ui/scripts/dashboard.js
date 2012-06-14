@@ -11,11 +11,12 @@ var Dashboard = function(elementSelector, host, options) {
 Dashboard.defaults = {
   host: '',
   showTotals: false,
+  step: 1e4,
   height: 35
 };
 
 Dashboard.prototype.setup = function() {
-  var step = +cubism.option("step", 1e4);
+  var step = cubism.option("step", this.options.step);
   var context = cubism.context()
       .step(step)
       .size(window.innerWidth - 4);

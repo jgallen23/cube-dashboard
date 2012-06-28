@@ -20,13 +20,12 @@ EventList.prototype.render = function() {
         .text(name)
         .attr('value', value);
   };
-  addListItem("Please select", "-1");
   for (var name in this.events) {
     addListItem(name, name);
   }
   self.el.on('change', function() {
-    if (this.value == "-1")
-      return;
     self.options.selected(this.value, self.events[this.value]);
   });
+  var firstKey = Object.keys(this.events)[0];
+  self.options.selected(firstKey, self.events[firstKey]);
 };

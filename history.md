@@ -1,4 +1,11 @@
 
+0.0.4 / 2012-06-27 
+==================
+
+  * auto select first item in drop down for events
+  * Proper rendering of nested event data.
+  * Use valid JSON in sample config.
+
 0.0.3 / 2012-05-31 
 ==================
 

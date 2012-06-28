@@ -9,8 +9,8 @@
     "url": "https://github.com/jgallen23/cube-dashboard.git"
   },
   "dependencies": {
-    "node-static": "*",
-    "optimist": "*"
+    "node-static": "0.6.0",
+    "optimist": "0.3.4"
   },
   "devDependencies": {
   },

@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 var opt = require('optimist')
-  .usage('Start dashboard server\n$0 <config.json>')
-  .demand(1)
+  .usage('Start dashboard server\n$0 [config.json]\n\nconfig.json can be passed in as local or remote file.\n\nConfig file can also be set by environment variable CUBE_REMOTE_FILE.')
   .options('h', {
     desc: 'Show help info',
     alias: 'help',
@@ -32,6 +31,14 @@ var publicPath = path.join(__dirname, '../public');
 var file = new(static.Server)(publicPath);
 
 var configFile = argv._[0];
+if(typeof(configFile) == 'undefined'){
+  if(typeof(process.env.CUBE_REMOTE_FILE) != 'undefined'){
+    configFile=process.env.CUBE_REMOTE_FILE
+  }else{
+    opt.showHelp();    
+    process.exit();
+  }
+}
 
 var startServer = function(err, configStr) {
   if (err) throw err;

@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/jgallen23/cube-dashboard.png)](http://travis-ci.org/jgallen23/cube-dashboard)
 # Cube Dashboard
 
 Generic dashboard for [cube](http://square.github.com/cube/).

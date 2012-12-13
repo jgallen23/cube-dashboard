@@ -20,7 +20,7 @@ DashboardSelect.prototype.setup = function() {
   select.selectedIndex = this.currentIndex;
   select.addEventListener('change', function() {
     window.location = "?dashboard=" + select.value + "&" + location.search.replace(/[?&]dashboard=[^&]*(&|$)/g, "$1").substring(1);
-  });
+  }, false);
 
   document.title = this.getCurrentDashboard().name + ' Dashboard';
 

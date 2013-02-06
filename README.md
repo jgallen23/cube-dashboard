@@ -26,3 +26,9 @@ change the sample-config.json and then run:
 	cube-dashboard config.json
 
 you can also run `cube-dashboard --help` for all the options
+
+To run on Heroku, minify your config.json file and set your configuration in
+the `DASHBOARD_CONFIG` environment variable:
+
+    npm install json-minify
+    heroku config:set DASHBOARD_CONFIG="$(cat config.json | ./node_modules/json-minify/index.js)"

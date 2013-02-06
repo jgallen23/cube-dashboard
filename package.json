@@ -15,7 +15,7 @@
   "devDependencies": {
   },
   "engines": {
-    "node": "*"
+    "node": "0.6.*"
   },
   "bin": { "cube-dashboard": "./bin/dashboard.js" },
   "keywords": ["cube", "dashboard", "report"]

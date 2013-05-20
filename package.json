@@ -3,13 +3,13 @@
   "author": "Greg Allen <@jgaui> (http://jga.me)",
   "description": "a dashboard for cube",
   "homepage": "https://github.com/jgallen23/cube-dashboard",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/jgallen23/cube-dashboard.git"
   },
   "dependencies": {
-    "node-static": "0.6.0",
+    "node-static": "0.6.9",
     "optimist": "0.3.4"
   },
   "devDependencies": {

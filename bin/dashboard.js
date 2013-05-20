@@ -49,7 +49,7 @@ var startServer = function(err, configStr) {
     } else {
       request.addListener('end', function () {
         file.serve(request, response);
-      });
+      }).resume();
     }
   }).listen(argv.port);
   console.log('Server started on port ' + argv.port);

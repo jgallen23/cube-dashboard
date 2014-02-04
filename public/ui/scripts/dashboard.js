@@ -97,6 +97,7 @@ Dashboard.prototype.setMetrics = function(metrics) {
     .call(self.horizon
       .height(self.options.height)
       .title(function(d) { return d.title; })
+      .extent(function(d) { return d.extent; })
       .metric(function(d) { return self.cube.metric(d.expression); }));
 
    if (this.options.showTotals) {
